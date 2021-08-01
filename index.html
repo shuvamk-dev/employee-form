@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/thinline.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./script.js" defer></script>
+    <title>Employee Input Form</title>
+  </head>
+  <body>
+    <div class="modal" id="modal">
+      <img src="./assets/success.png" class="success-image" alt="='success" />
+      <div>
+        You're a good employee!<br />
+        Details are saved.
+      </div>
+      <div class="cool-button" id="cool-button">Got it 👍</div>
+    </div>
+    <div class="container">
+      <div class="heading">Employee Input Form</div>
+      <form>
+        <div class="form-section">
+          <div class="form-item">
+            <label class="input-label">First Name</label>
+            <input type="text" aria-label="first-name" id="fname" />
+            <i class="fi-rr-checkbox icon correct"></i>
+            <i class="fi-rr-exclamation icon incorrect"></i>
+            <small class="error-msg"><i>This is error message</i> </small>
+          </div>
+          <div class="form-item">
+            <label class="input-label">Last Name</label>
+            <input type="text" aria-label="last-name" id="lname" />
+            <i class="fi-rr-checkbox icon correct"></i>
+            <i class="fi-rr-exclamation icon incorrect"></i>
+            <small class="error-msg"><i>This is error message</i> </small>
+          </div>
+        </div>
+        <div class="form-section">
+          <div class="form-check-item">
+            <label class="input-label">Gender</label>
+            <div class="check-options">
+              <div class="check-option" id="male-button">
+                <i class="fas fa-mars check-icon"></i>
+                <label class="check-label">Male</label>
+              </div>
+              <div class="check-option" id="female-button">
+                <i class="fas fa-venus check-icon"></i>
+                <label class="check-label">Female</label>
+              </div>
+            </div>
+            <small class="error-msg"><i>This is error message</i> </small>
+          </div>
+          <div class="form-check-item">
+            <label class="input-label">Marital Status</label>
+            <div class="check-options-more">
+              <div class="check-option" id="married-button">
+                <i class="fi-rr-home"></i>
+                <label class="check-label">Married</label>
+              </div>
+              <div class="check-option" id="unmarried-button">
+                <i class="fi-rr-user"></i>
+                <label class="check-label">Unmarried</label>
+              </div>
+            </div>
+            <small class="error-msg"><i>This is error message</i> </small>
+          </div>
+        </div>
+        <div
+          class="form-section not-visible spouse-section"
+          id="spouse-section"
+        >
+          <div class="form-item">
+            <label class="input-label">Spouse First Name</label>
+            <input type="text" aria-label="first-name" id="spouse-fname" />
+            <i class="fi-rr-checkbox icon correct"></i>
+            <i class="fi-rr-exclamation icon incorrect"></i>
+            <small class="error-msg"><i>This is error message</i> </small>
+          </div>
+          <div class="form-item">
+            <label class="input-label">Spouse Last Name</label>
+            <input type="text" aria-label="last-name" id="spouse-lname" />
+            <i class="fi-rr-checkbox icon correct"></i>
+            <i class="fi-rr-exclamation icon incorrect"></i>
+            <small class="error-msg"><i>This is error message</i> </small>
+          </div>
+        </div>
+        <div class="other-details">
+          <label class="input-label">Other Details</label>
+          <textarea rows="5" id="other-details"></textarea>
+        </div>
+        <div class="form-section">
+          <div class="form-item">
+            <button class="button" id="reset-button">RESET</button>
+          </div>
+          <div class="form-item">
+            <button class="button" id="save-button">SAVE</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

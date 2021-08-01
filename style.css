@@ -1,0 +1,256 @@
+body {
+  margin: 0px;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body.modal-open .container {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
+}
+.modal {
+  position: absolute;
+  background-color: #00d09c;
+  color: white;
+  padding: 24px;
+  z-index: 99;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  display: none;
+}
+.success-image {
+  height: 240px;
+}
+.cool-button {
+  background-color: white;
+  color: #00d09c;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.modal-visible {
+  display: flex;
+}
+.container {
+  background: #ffffff;
+  box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
+  border-radius: 12px;
+  width: 50%;
+}
+
+.heading {
+  background-color: #00d09c;
+  padding: 16px 0px;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  font-size: 32px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  padding: 16px 0px;
+  width: 100%;
+}
+
+.form-section {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 8px;
+}
+.form-item {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  position: relative;
+}
+.form-item input {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  outline: none;
+}
+.form-item input:focus {
+  border: 1px solid black;
+}
+.input-label {
+  font-size: 18px;
+}
+.icon {
+  position: absolute;
+  right: 8px;
+  top: 40%;
+  visibility: hidden;
+}
+.error-msg {
+  visibility: hidden;
+}
+
+.form-check-item {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.check-options {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.check-options-more {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+.check-option {
+  cursor: pointer;
+  border: 1px solid #d9d9d9;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: gray;
+}
+.check-option label {
+  pointer-events: none;
+}
+
+.other-details {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 32px;
+}
+
+.button {
+  background-color: #00d09c;
+  border: none;
+  cursor: pointer;
+  font-size: 28px;
+  color: white;
+  font-weight: 500;
+  padding: 6px 0px;
+  border-radius: 6px;
+}
+
+.form-item.error small {
+  visibility: visible;
+  color: red;
+}
+.form-check-item.error small {
+  visibility: visible;
+  color: red;
+}
+.form-item.error .incorrect {
+  visibility: visible;
+  color: red;
+}
+
+.form-item.success .correct {
+  visibility: visible;
+  color: #00d09c;
+}
+
+.not-visible {
+  display: none;
+}
+.set-visible {
+  display: flex;
+}
+.spouse-section {
+  transition: all 1.3s ease-in;
+}
+.color-green {
+  border: 1px solid #00d09c;
+  color: #00d09c;
+}
+/* Media Queries */
+@media only screen and (max-width: 860px) {
+  .heading {
+    font-size: 26px;
+  }
+  .container {
+    width: 70%;
+  }
+  .form-section {
+    flex-direction: column;
+    padding-left: 32px;
+  }
+  .other-details {
+    margin: auto 0px;
+    padding-left: 32px;
+    width: 75%;
+    margin-bottom: 16px;
+  }
+  .form-item {
+    width: 80%;
+  }
+  .form-check-item {
+    width: 80%;
+  }
+  .button {
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .heading {
+    font-size: 20px;
+  }
+  .container {
+    width: 80%;
+  }
+  .form-check-item {
+    width: 100%;
+  }
+  .check-options-more {
+    font-size: 14px;
+    width: 70%;
+  }
+  .check-options {
+    width: 60%;
+    font-size: 14px;
+  }
+  .input-label {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 18px;
+  }
+  .icon {
+    top: 30%;
+  }
+  .success-image {
+    height: 160px;
+  }
+  .modal {
+    padding: 12px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .check-options-more {
+    width: 90%;
+  }
+  .check-options {
+    width: 70%;
+  }
+}
