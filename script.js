@@ -1,3 +1,4 @@
+// Importing all the input fields and buttons
 const fname = document.getElementById("fname");
 const lname = document.getElementById("lname");
 const otherDetails = document.getElementById("other-details");
@@ -22,10 +23,12 @@ const save = document.getElementById("save-button");
 
 const coolButton = document.getElementById("cool-button");
 
+// Focus on first input field
 window.onload = function () {
   fname.focus();
 };
 
+// Event listeners for all buttons
 tnc.addEventListener("click", (e) => {
   removeTnCError(tnc);
   if (!tncAccepted) {
@@ -90,6 +93,8 @@ coolButton.addEventListener("click", (e) => {
   modal.classList.remove("modal-visible");
   document.body.classList.remove("modal-open");
 });
+
+// Check for all valid inputs
 save.addEventListener("click", (e) => {
   e.preventDefault();
   const fnameVal = fname.value.trim();

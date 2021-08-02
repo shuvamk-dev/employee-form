@@ -8,6 +8,8 @@ body {
   align-items: center;
   position: relative;
 }
+
+/* Modal CSS */
 body.modal-open .container {
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
@@ -40,6 +42,8 @@ body.modal-open .container {
 .modal-visible {
   display: flex;
 }
+
+/* Form Container */
 .container {
   background: #ffffff;
   box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
@@ -55,7 +59,6 @@ body.modal-open .container {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   font-size: 32px;
-  /* color: #001f3f; */
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -158,12 +161,12 @@ form {
   cursor: pointer;
   font-size: 14px;
   letter-spacing: 2px;
-
   font-weight: 500;
   padding: 12px 32px;
   border-radius: 6px;
 }
 
+/* Error Message for various components */
 .form-item.error small {
   visibility: visible;
   color: red;
@@ -202,6 +205,8 @@ form {
   border: 1px solid #001f3f;
   color: #001f3f;
 }
+
+/* TnC CSS */
 .tnc-div {
   width: 80%;
   margin-bottom: 12px;
@@ -241,7 +246,6 @@ form {
   .heading {
     font-size: 20px;
   }
-
   .check-options-more {
     font-size: 14px;
   }
