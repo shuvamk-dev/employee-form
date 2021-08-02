@@ -44,14 +44,24 @@
         <div class="form-section">
           <div class="form-item">
             <label class="input-label">First Name</label>
-            <input type="text" aria-label="first-name" id="fname" />
+            <input
+              type="text"
+              aria-label="first-name"
+              id="fname"
+              autocomplete="off"
+            />
             <i class="fi-rr-checkbox icon correct"></i>
             <i class="fi-rr-exclamation icon incorrect"></i>
             <small class="error-msg"><i>This is error message</i> </small>
           </div>
           <div class="form-item">
             <label class="input-label">Last Name</label>
-            <input type="text" aria-label="last-name" id="lname" />
+            <input
+              type="text"
+              aria-label="last-name"
+              id="lname"
+              autocomplete="off"
+            />
             <i class="fi-rr-checkbox icon correct"></i>
             <i class="fi-rr-exclamation icon incorrect"></i>
             <small class="error-msg"><i>This is error message</i> </small>
@@ -59,31 +69,37 @@
         </div>
         <div class="form-section">
           <div class="form-check-item">
-            <label class="input-label">Gender</label>
-            <div class="check-options">
-              <div class="check-option" id="male-button">
-                <i class="fas fa-mars check-icon"></i>
-                <label class="check-label">Male</label>
-              </div>
-              <div class="check-option" id="female-button">
-                <i class="fas fa-venus check-icon"></i>
-                <label class="check-label">Female</label>
+            <div class="options-parent">
+              <label class="input-label">Gender:</label>
+              <div class="check-options">
+                <div class="check-option" id="male-button">
+                  <i class="fas fa-mars check-icon"></i>
+                  <label class="check-label">Male</label>
+                </div>
+                <div class="check-option" id="female-button">
+                  <i class="fas fa-venus check-icon"></i>
+                  <label class="check-label">Female</label>
+                </div>
               </div>
             </div>
+
             <small class="error-msg"><i>This is error message</i> </small>
           </div>
           <div class="form-check-item">
-            <label class="input-label">Marital Status</label>
-            <div class="check-options-more">
-              <div class="check-option" id="married-button">
-                <i class="fi-rr-home"></i>
-                <label class="check-label">Married</label>
-              </div>
-              <div class="check-option" id="unmarried-button">
-                <i class="fi-rr-user"></i>
-                <label class="check-label">Unmarried</label>
+            <div class="options-parent">
+              <div class="input-label">Marital Status:</div>
+              <div class="check-options-more">
+                <div class="check-option" id="married-button">
+                  <i class="fi-rr-home"></i>
+                  <label class="check-label">Married</label>
+                </div>
+                <div class="check-option" id="unmarried-button">
+                  <i class="fi-rr-user"></i>
+                  <label class="check-label">Unmarried</label>
+                </div>
               </div>
             </div>
+
             <small class="error-msg"><i>This is error message</i> </small>
           </div>
         </div>
@@ -93,14 +109,24 @@
         >
           <div class="form-item">
             <label class="input-label">Spouse First Name</label>
-            <input type="text" aria-label="first-name" id="spouse-fname" />
+            <input
+              type="text"
+              aria-label="first-name"
+              id="spouse-fname"
+              autocomplete="off"
+            />
             <i class="fi-rr-checkbox icon correct"></i>
             <i class="fi-rr-exclamation icon incorrect"></i>
             <small class="error-msg"><i>This is error message</i> </small>
           </div>
           <div class="form-item">
             <label class="input-label">Spouse Last Name</label>
-            <input type="text" aria-label="last-name" id="spouse-lname" />
+            <input
+              type="text"
+              aria-label="last-name"
+              id="spouse-lname"
+              autocomplete="off"
+            />
             <i class="fi-rr-checkbox icon correct"></i>
             <i class="fi-rr-exclamation icon incorrect"></i>
             <small class="error-msg"><i>This is error message</i> </small>
@@ -110,13 +136,19 @@
           <label class="input-label">Other Details</label>
           <textarea rows="5" id="other-details"></textarea>
         </div>
-        <div class="form-section">
-          <div class="form-item">
-            <button class="button" id="reset-button">RESET</button>
+        <div class="tnc-div">
+          <div class="tnc-check">
+            <div class="tnc-icon" id="tnc-button">
+              <i class="fi-rr-square" id="tnc-icon"></i>
+            </div>
+            <div>I accept <span class="tnc">Terms and Conditions</span></div>
           </div>
-          <div class="form-item">
-            <button class="button" id="save-button">SAVE</button>
-          </div>
+          <small class="error-msg"><i>This is error message</i> </small>
+        </div>
+        <div class="form-section buttons">
+          <button class="button" id="reset-button">RESET</button>
+
+          <button class="button" id="save-button">SAVE</button>
         </div>
       </form>
     </div>

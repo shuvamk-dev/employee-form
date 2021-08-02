@@ -44,7 +44,8 @@ body.modal-open .container {
   background: #ffffff;
   box-shadow: -20px 20px 60px #d9d9d9, 20px -20px 60px #ffffff;
   border-radius: 12px;
-  width: 50%;
+  width: 100%;
+  max-width: 520px;
 }
 
 .heading {
@@ -54,7 +55,7 @@ body.modal-open .container {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
   font-size: 32px;
-  color: white;
+  /* color: #001f3f; */
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -64,31 +65,38 @@ body.modal-open .container {
 form {
   padding: 16px 0px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-section {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex: 1;
+  flex-direction: column;
   margin-bottom: 8px;
+  align-items: center;
 }
 .form-item {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 80%;
   position: relative;
 }
 .form-item input {
   padding: 8px 16px;
   font-size: 14px;
-  border: 1px solid #d9d9d9;
+  border: 2px solid #d9d9d9;
   border-radius: 6px;
   outline: none;
 }
 .form-item input:focus {
-  border: 1px solid black;
+  border: 2px solid #00d09c;
 }
 .input-label {
   font-size: 18px;
+  color: #001f3f;
 }
 .icon {
   position: absolute;
@@ -101,24 +109,20 @@ form {
 }
 
 .form-check-item {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  width: 80%;
   margin-bottom: 12px;
 }
 
 .check-options {
-  width: 60%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
+  flex: 1;
+  margin-left: 8px;
+  align-items: center;
 }
 .check-options-more {
-  width: 80%;
   display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
+  flex: 1;
+  margin-left: 8px;
 }
 .check-option {
   cursor: pointer;
@@ -126,27 +130,37 @@ form {
   padding: 4px 8px;
   border-radius: 6px;
   color: gray;
+  margin-right: 12px;
 }
 .check-option label {
   pointer-events: none;
+}
+.options-parent {
+  display: flex;
 }
 
 .other-details {
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   margin: auto;
   margin-bottom: 32px;
 }
-
+.form-section.buttons {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+  justify-content: space-around;
+}
 .button {
   background-color: #00d09c;
   border: none;
   cursor: pointer;
-  font-size: 28px;
-  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+
   font-weight: 500;
-  padding: 6px 0px;
+  padding: 12px 32px;
   border-radius: 6px;
 }
 
@@ -158,6 +172,10 @@ form {
   visibility: visible;
   color: red;
 }
+.tnc-div.error small {
+  visibility: visible;
+  color: red;
+}
 .form-item.error .incorrect {
   visibility: visible;
   color: red;
@@ -165,6 +183,9 @@ form {
 
 .form-item.success .correct {
   visibility: visible;
+  color: #00d09c;
+}
+.accepted {
   color: #00d09c;
 }
 
@@ -178,62 +199,57 @@ form {
   transition: all 1.3s ease-in;
 }
 .color-green {
-  border: 1px solid #00d09c;
-  color: #00d09c;
+  border: 1px solid #001f3f;
+  color: #001f3f;
+}
+.tnc-div {
+  width: 80%;
+  margin-bottom: 12px;
+}
+.tnc-icon {
+  margin-right: 6px;
+}
+.tnc-icon i {
+  display: flex;
+  align-items: center;
+}
+.tnc {
+  color: #001f3f;
+  text-decoration: underline;
+}
+.tnc-check {
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 /* Media Queries */
 @media only screen and (max-width: 860px) {
   .heading {
     font-size: 26px;
   }
-  .container {
-    width: 70%;
-  }
-  .form-section {
-    flex-direction: column;
-    padding-left: 32px;
-  }
-  .other-details {
-    margin: auto 0px;
-    padding-left: 32px;
-    width: 75%;
-    margin-bottom: 16px;
-  }
-  .form-item {
-    width: 80%;
-  }
-  .form-check-item {
-    width: 80%;
-  }
+
   .button {
     margin-bottom: 12px;
-    font-size: 22px;
   }
 }
 
 @media only screen and (max-width: 520px) {
-  .heading {
-    font-size: 20px;
-  }
   .container {
     width: 80%;
   }
-  .form-check-item {
-    width: 100%;
+  .heading {
+    font-size: 20px;
   }
+
   .check-options-more {
     font-size: 14px;
-    width: 70%;
   }
   .check-options {
-    width: 60%;
     font-size: 14px;
   }
   .input-label {
     font-size: 16px;
-  }
-  .button {
-    font-size: 18px;
   }
   .icon {
     top: 30%;
@@ -244,13 +260,14 @@ form {
   .modal {
     padding: 12px;
   }
+  .options-parent {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (max-width: 420px) {
-  .check-options-more {
-    width: 90%;
-  }
-  .check-options {
-    width: 70%;
+  .button {
+    font-size: 10px;
+    padding: 12px 24px;
   }
 }

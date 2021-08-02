@@ -5,9 +5,11 @@ const spouseSection = document.getElementById("spouse-section");
 const spouseFName = document.getElementById("spouse-fname");
 const spouseLName = document.getElementById("spouse-lname");
 const modal = document.getElementById("modal");
+const tnc = document.getElementById("tnc-button");
 
 var marriedStatus;
 var gender;
+var tncAccepted = false;
 
 const genderMaleButton = document.getElementById("male-button");
 const genderFemaleButton = document.getElementById("female-button");
@@ -24,6 +26,22 @@ window.onload = function () {
   fname.focus();
 };
 
+tnc.addEventListener("click", (e) => {
+  removeError(tnc);
+  if (!tncAccepted) {
+    tncAccepted = true;
+    document
+      .getElementById("tnc-icon")
+      .classList.replace("fi-rr-square", "fi-rr-checkbox");
+    document.getElementById("tnc-icon").classList.add("accepted");
+  } else {
+    tncAccepted = false;
+    document
+      .getElementById("tnc-icon")
+      .classList.replace("fi-rr-checkbox", "fi-rr-square");
+    document.getElementById("tnc-icon").classList.remove("accepted");
+  }
+});
 genderMaleButton.addEventListener("click", (event) => {
   gender = "male";
   genderMaleButton.classList.add("color-green");
@@ -116,6 +134,10 @@ save.addEventListener("click", (e) => {
       }
     }
   }
+  if (!tncAccepted) {
+    flag = false;
+    setTncError(tnc, "Please accept the T&C");
+  }
   if (flag) allGood();
 });
 
@@ -136,12 +158,23 @@ const removeError = (ele) => {
   item.classList.remove("error");
 };
 const setButtonError = (ele, msg) => {
-  const item = ele.parentElement.parentElement;
+  const item = ele.parentElement.parentElement.parentElement;
   const err = item.querySelector("small");
   err.innerText = msg;
   item.classList.add("error");
 };
 const removeButtonError = (ele, msg) => {
+  const item = ele.parentElement.parentElement.parentElement;
+
+  item.classList.remove("error");
+};
+const setTncError = (ele, msg) => {
+  const item = ele.parentElement.parentElement;
+  const err = item.querySelector("small");
+  err.innerText = msg;
+  item.classList.add("error");
+};
+const removeTnCError = (ele) => {
   const item = ele.parentElement.parentElement;
 
   item.classList.remove("error");
@@ -151,8 +184,13 @@ const removeErrors = () => {
   lname.parentElement.classList.remove("error");
   spouseFName.parentElement.classList.remove("error");
   spouseLName.parentElement.classList.remove("error");
-  genderMaleButton.parentElement.parentElement.classList.remove("error");
-  marriedButton.parentElement.parentElement.classList.remove("error");
+  tnc.parentElement.parentElement.classList.remove("error");
+  genderMaleButton.parentElement.parentElement.parentElement.classList.remove(
+    "error"
+  );
+  marriedButton.parentElement.parentElement.parentElement.classList.remove(
+    "error"
+  );
 };
 
 const allClear = () => {
@@ -160,6 +198,7 @@ const allClear = () => {
   lname.value = "";
   marriedStatus = undefined;
   gender = undefined;
+  tncAccepted = false;
   spouseFName.value = "";
   spouseLName.value = "";
   otherDetails.value = "";
@@ -168,4 +207,8 @@ const allClear = () => {
   genderMaleButton.classList.remove("color-green");
   genderFemaleButton.classList.remove("color-green");
   spouseSection.classList.remove("set-visible");
+  document
+    .getElementById("tnc-icon")
+    .classList.replace("fi-rr-checkbox", "fi-rr-square");
+  document.getElementById("tnc-icon").classList.remove("accepted");
 };
