@@ -27,7 +27,7 @@ window.onload = function () {
 };
 
 tnc.addEventListener("click", (e) => {
-  removeError(tnc);
+  removeTnCError(tnc);
   if (!tncAccepted) {
     tncAccepted = true;
     document
